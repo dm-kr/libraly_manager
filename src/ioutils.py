@@ -24,7 +24,7 @@ class DataWriter(abc.ABC):
 
 class JSONIO(DataReader, DataWriter):
     def read(filepath: str) -> dict:
-        with open(filepath, "r", encoding="utf-8") as file:
+        with open(filepath, "a+", encoding="utf-8") as file:
             try:
                 data = json.load(file)
             except JSONDecodeError:
